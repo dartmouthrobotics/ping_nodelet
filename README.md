@@ -10,6 +10,10 @@ Currently only working with simple distance messages (distance and confidence me
 ## Raspberry Pi Setup
 * Install [ping-python](https://github.com/bluerobotics/ping-python)
 * Set `start_ping.sh` in `~/companion/scripts`
+  * Run:
+    ``` console
+        $ chmod +x start_ping.sh
+    ```
 * In `~/companion/.companion.rc` add this line:
 ``` console
 $ sudo -H -u pi screen -dm -S ping $COMPANION_DIR/scripts/start_ping.sh
