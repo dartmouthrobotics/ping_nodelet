@@ -45,6 +45,7 @@ void PingMessage::unpack_msg_data(std::vector<unsigned char> buf)
   unsigned char data[4]; /**< temp holder for distance */
   confidence = 0;
 
+  unsigned int raw_dist;
   for(int i = 0; i < buf.size(); i++)
   {
     if ( (8 <= i)  and (i < 12))
@@ -53,14 +54,15 @@ void PingMessage::unpack_msg_data(std::vector<unsigned char> buf)
     }
     if (12 == i)
     {
-      confidence = 0x000000ff & buf.at(i);
+      confidence = 0xff & buf.at(i);
     }
   }
 
-  distance = (unsigned int)(data[3] << 24 |
+  raw_dist = (unsigned int)(data[3] << 24 |
               data[2] << 16 |
               data[1] << 8 |
               data[0]);
+  distance = raw_dist / 100.0;
 }
 
 }

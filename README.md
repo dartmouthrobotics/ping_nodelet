@@ -1,15 +1,16 @@
 ## Ping Echo Sounder Nodelet
 Based on: [bluerobotics/ping-python/brping/pingmessage.py](https://github.com/bluerobotics/ping-python/blob/master/brping/pingmessage.py)
 
-Currently only working with simple distance messages (distance and confidence measures).
+Currently only working with simple distance messages (distance in meters and confidence measures in percentages).
 
 ## To Do
 * Improve project design.
 * Extend to other ping messages.
+* Set frame id.
 
 ## Raspberry Pi Setup
 * Install [ping-python](https://github.com/bluerobotics/ping-python)
-* Set `start_ping.sh` in `~/companion/scripts`
+* Move `start_ping.sh` in `~/companion/scripts`
   * Run:
     ``` console
     $ chmod +x start_ping.sh

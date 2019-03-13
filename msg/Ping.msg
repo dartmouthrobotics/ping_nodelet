@@ -1,4 +1,5 @@
 std_msgs/Header header
+string frame_id
 
-uint32 distance
-uint32 confidence
+float32 distance
+uint8 confidence

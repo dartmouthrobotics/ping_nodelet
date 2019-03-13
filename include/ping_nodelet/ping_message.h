@@ -13,7 +13,7 @@ class PingMessage
 {
   public:
     char msg_data[10];          /**< packed message sent to UDP socket */
-    unsigned int distance;      /**< distance recorded by ping echo sounder */
+    float distance;      /**< distance recorded by ping echo sounder */
     unsigned int confidence;   /**< confidence recorded by ping echo sounder */
 
     PingMessage(){};

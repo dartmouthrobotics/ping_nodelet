@@ -90,8 +90,12 @@ class PingDepth
             parser->parse_byte(buffer[i]);
           }
 
-          /*! publish data */
+          /*!
+              publish data
+              TO DO: set frame_id
+          */
           msg.header.stamp = ros::Time::now();
+          msg.frame_id = '0';
           msg.distance = parser->m->distance;
           msg.confidence = parser->m->confidence;
           pub.publish(msg);
