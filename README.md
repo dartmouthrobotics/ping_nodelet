@@ -12,7 +12,7 @@ Currently only working with simple distance messages (distance and confidence me
 * Set `start_ping.sh` in `~/companion/scripts`
   * Run:
     ``` console
-        $ chmod +x start_ping.sh
+    $ chmod +x start_ping.sh
     ```
 * In `~/companion/.companion.rc` add this line:
 ``` console
