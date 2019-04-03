@@ -62,7 +62,7 @@ void PingMessage::unpack_msg_data(std::vector<unsigned char> buf)
               data[2] << 16 |
               data[1] << 8 |
               data[0]);
-  distance = raw_dist / 100.0;
+  distance = raw_dist / 1000.0;
 }
 
 }
