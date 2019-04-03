@@ -7,6 +7,12 @@ Currently only working with simple distance messages (distance in meters and con
 * Improve project design.
 * Extend to other ping messages.
 * Set frame id.
+* Add more parameters to the ros ping echo sounder message to match with `sensor_msgs/Range` message type:
+  * radiation_type: 0   (sonar)
+  * field_of_view: 0.0  (or say 30 degrees)
+  * min_range: 0.5      (meters)
+  * max_range: 30.0     (meters)
+
 
 ## Raspberry Pi Setup
 * Install [ping-python](https://github.com/bluerobotics/ping-python)
