@@ -60,8 +60,6 @@ class PingDepth
       ros::Publisher pub = nh_.advertise<Ping>("/ping_nodelet/ping", 1000);
       Ping msg;
 
-      /*! Initialize a parser to handle incoming messages */
-      PingParser* parser = new PingParser();
       /*!
         Initialize message to handle packing and unpacking of data
         TO DO: initialize what kind of mesage to request
@@ -72,6 +70,12 @@ class PingDepth
 
       while(ros::ok())
       {
+        /*! Initialize a parser to handle incoming messages
+            TO DO: We want this outside of the while loop, but there is a bug currently if done.
+              It's in the parse_byte method.
+        */
+        PingParser* parser = new PingParser();
+
         /*! send message to ping echo sounder via raspberry pi */
         send(sock, m->msg_data, (int)( sizeof(m->msg_data) / sizeof(m->msg_data[0]) ), 0);
 
@@ -101,6 +105,8 @@ class PingDepth
           pub.publish(msg);
 
         }
+
+        delete parser;
       }
 
       return true;
