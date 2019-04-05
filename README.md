@@ -12,6 +12,7 @@ Currently only working with simple distance messages (distance in meters and con
   * field_of_view: 0.0  (or say 30 degrees)
   * min_range: 0.5      (meters)
   * max_range: 30.0     (meters)
+* Fix bug as said in ping_depth.h about initializing PingParser 
 
 
 ## Raspberry Pi Setup
