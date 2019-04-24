@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="fhADYjOr6bTO7B-pFZSUWxqBDKt6yfWbMZNDKJic0Js" />
-
 ## Ping Echo Sounder Nodelet
 Based on: [bluerobotics/ping-python/brping/pingmessage.py](https://github.com/bluerobotics/ping-python/blob/master/brping/pingmessage.py)
 
