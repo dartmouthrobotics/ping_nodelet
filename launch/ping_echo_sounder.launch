@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="nodelet" type="nodelet" name="standalone_nodelet" args="manager" output="screen"/>
-  <node pkg="nodelet" type="nodelet" name="PingDepthNodelet" args="load ping_nodelet/PingDepthNodelet standalone_nodelet" output="screen">
+  <node pkg="nodelet" type="nodelet" name="standalone_ping_nodelet" args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="PingDepthNodelet" args="load ping_nodelet/PingDepthNodelet standalone_ping_nodelet" output="screen">
   </node>
 </launch>

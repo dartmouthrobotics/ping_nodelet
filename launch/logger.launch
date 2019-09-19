@@ -1,0 +1,15 @@
+<launch>
+
+<arg name="bag.name" default="/home/$(env USER)/data/$(optenv EXPERIMENT tank)"/>
+<arg name="bag.topics"
+     default=
+     "
+/ar_pose_marker
+/camera/image_raw/compressed
+/mavros/vfr_hud
+/ping_nodelet/ping
+/tf
+     "/>
+
+  <node pkg="rosbag" type="record" name="$(anon record)" args="--output-prefix=$(arg bag.name) $(arg bag.topics)" />
+</launch>

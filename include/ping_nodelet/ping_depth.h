@@ -68,6 +68,31 @@ class PingDepth
       /*! pack message to be sent via UDP socket */
       m->pack_msg_data();
 
+      // Set mode to manual
+      // if (ros::ok())
+      // {
+      //   // PING1D_SET_MODE_AUTO
+      //   // 0: manual mode, 1: auto mode
+      //   static const unsigned char start_1 = 'B';   /**< first byte of messages */
+      //   static const unsigned char start_2 = 'R';
+      //
+      //   char msg_mode[10];
+      //   msg_mode[0] = start_1;                      /**< 'B' 1 byte */
+      //   msg_mode[1] = start_2;                      /**< 'R' 1 byte */
+      //   msg_mode[2] = '\0';                         /**< TO DO payload length (must be empty) 1/2 bytes */
+      //   msg_mode[3] = '\0';                         /**< TO DO payload length (must be empty) 2/2 bytes */
+      //   msg_mode[4] = (PING1D_MODE_AUTO) & 0xff;          /**< request id 1/2 bytes */
+      //   msg_mode[5] = ((PING1D_MODE_AUTO >> 8) & 0xff);   /**< request id 2/2 bytes */
+      //   msg_mode[6] = '\0';                         /**< TO DO src device id (must be empty) 1 byte */
+      //   msg_mode[7] = '\0';                         /**< dst device id 1 byte */
+      //   msg_mode[8] = 'S';                          /**< TO DO checksum (not clear how to get these values) 1/2 bytes */
+      //   msg_mode[9] = 0x01;
+      //
+      //   /*! send message to ping echo sounder via raspberry pi */
+      //   send(sock, msg_mode, (int)( sizeof(msg_mode) / sizeof(msg_mode[0]) ), 0);
+      //   // std::cout << std::endl << "Mode: manual" << std::endl;
+      // }
+
       while(ros::ok())
       {
         /*! Initialize a parser to handle incoming messages
