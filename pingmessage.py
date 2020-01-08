@@ -762,7 +762,7 @@ if __name__ == "__main__":
 
         m.message_id = PING1D_SET_SPEED_OF_SOUND
         m.request_id = None
-        m.speed_of_sound = 1400000
+        m.speed_of_sound = 1500000
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
