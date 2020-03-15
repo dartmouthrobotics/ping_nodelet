@@ -37,7 +37,7 @@ $ sudo -H -u pi screen -dm -S ping $COMPANION_DIR/scripts/start_ping.sh
 This package has been tested on Ubuntu 16.04.
 
 Set up your catkin workspace:
-``` console
+```
 mkdir -p catkin_ws/src
 cd catkin_ws/src/
 catkin_init_workspace
@@ -45,26 +45,26 @@ catkin_init_workspace
 
 ## Install
 Clone repository:
-``` console
+```
 git clone https://github.com/dartmouthrobotics/underwater_color_enhance.git
 ```
 
 ## Build
 To build:
-``` console
+```
 catkin_make
 source devel/setup.bash
 ```
 
 ## Configuration
 To change parameters, edit the end of the `pingmessage.py` file, then run it:
-``` console
+```
 python pingmessage.py
 ```
 
 ## Run
-``` console
-$ roslaunch ping_nodelet ping_echo_sounder.launch
+```
+roslaunch ping_nodelet ping_echo_sounder.launch
 ```
 
 Ping echo sounder data will be published to the `/ping_nodelet/ping` rostopic.
