@@ -3,32 +3,32 @@
   <name>ping_nodelet</name>
   <version>1.0.0</version>
   <description>
-    Nodelet for the Blue Robotics Ping echo sounder.
+    Nodelet for the Blue Robotics Ping echosounder.
   </description>
 
   <author email="mroznere@gmail.com">Monika Roznere</author>
   <maintainer email="mroznere@gmail.com">Monika Roznere</maintainer>
 
-  <!-- One license tag required, multiple allowed, one license per tag -->
-  <!-- Commonly used license strings: -->
-  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
+  <license>GPLv3</license>
 
   <url type="repository">https://gitlab.com/monroz/ping_nodelet</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roscpp</build_depend>
+  <build_depend>roslint</build_depend>
   <build_depend>nodelet</build_depend>
   <build_depend>pluginlib</build_depend>
   <build_depend>message_generation</build_depend>
 
   <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>roslint</build_export_depend>
   <build_export_depend>nodelet</build_export_depend>
   <build_export_depend>pluginlib</build_export_depend>
   <build_export_depend>message_generation</build_export_depend>
 
   <exec_depend>roscpp</exec_depend>
+  <exec_depend>roslint</exec_depend>
   <exec_depend>nodelet</exec_depend>
   <exec_depend>pluginlib</exec_depend>
   <exec_depend>message_runtime</exec_depend>

@@ -732,7 +732,7 @@ if __name__ == "__main__":
     # s = serial.Serial(args.device, args.baudrate)
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    while True:
+    if True:
         # # m = PingMessage(PING1D_SET_PING_INTERVAL)
         # # m.ping_interval = 40
         m = PingMessage()
@@ -743,9 +743,9 @@ if __name__ == "__main__":
         # sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         # time.sleep(0.01)
         # print(m.msg_data)
-        # # while s.in_waiting:
-        #     # if p.parse_byte(s.read()) == PingParser.NEW_MESSAGE:
-        #         # print(p.rx_msg)
+        # while s.in_waiting:
+            # if p.parse_byte(s.read()) == PingParser.NEW_MESSAGE:
+                # print(p.rx_msg)
         # data, addr = sock.recvfrom(1024)
         # for byte in bytearray(data):
         #     p.parse_byte(byte)
@@ -758,11 +758,11 @@ if __name__ == "__main__":
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
-
-
+        #
+        #
         m.message_id = PING1D_SET_SPEED_OF_SOUND
         m.request_id = None
-        m.speed_of_sound = 1500000
+        m.speed_of_sound = 1450000
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
@@ -777,14 +777,14 @@ if __name__ == "__main__":
         m.message_id = PING1D_SET_RANGE
         m.request_id = None
         m.scan_start = 0
-        m.scan_length = 3000 # 5000 #4000
+        m.scan_length = 4000 # 5000 #4000
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
 
         m.message_id = PING1D_SET_PING_INTERVAL
         m.request_id = None
-        m.ping_interval = 50
+        m.ping_interval = 33
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
@@ -804,6 +804,11 @@ if __name__ == "__main__":
         # m.pack_msg_data()
         # sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         # time.sleep(0.01)
+        # data, addr = sock.recvfrom(1024)
+        # for byte in bytearray(data):
+        #     p.parse_byte(byte)
+        # print(p.rx_msg)
+
         # data, addr = sock.recvfrom(1024)
         # for byte in bytearray(data):
         #     p.parse_byte(byte)

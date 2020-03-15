@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ping_nodelet)
 
+add_compile_options(-std=c++14)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  roslint
   nodelet
   pluginlib
   message_generation
@@ -22,6 +25,7 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ping_depth_nodelet
   CATKIN_DEPENDS roscpp
+                 roslint
                  nodelet
                  pluginlib
                  message_generation
@@ -34,8 +38,6 @@ include_directories(include
 
 add_library(ping_depth_nodelet
   src/nodelet.cpp
-  src/ping_parser.cpp
-  src/ping_message.cpp
 )
 
 add_dependencies(ping_depth_nodelet
@@ -46,6 +48,17 @@ target_link_libraries(ping_depth_nodelet
   ${catkin_LIBRARIES}
 )
 
+roslint_cpp(
+  src/nodelet.cpp
+  include/${PROJECT_NAME}/ping_depth.h
+  include/${PROJECT_NAME}/ping-message-all.h
+  include/${PROJECT_NAME}/ping-message-bluebps.h
+  include/${PROJECT_NAME}/ping-message-common.h
+  include/${PROJECT_NAME}/ping-message-ping1d.h
+  include/${PROJECT_NAME}/ping-message-ping360.h
+  include/${PROJECT_NAME}/ping-message.h
+  include/${PROJECT_NAME}/ping-parser.h
+)
 
 install(TARGETS ping_depth_nodelet
         DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})

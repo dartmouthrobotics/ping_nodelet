@@ -1,18 +1,22 @@
+// Copyright (c) 2020 Monika Roznere, RLab @ Dartmouth College
+
 #include <nodelet/nodelet.h>
+#include <string>
 #include <pluginlib/class_list_macros.h>
+
 #include "ping_nodelet/ping_depth.h"
 
 namespace ping_nodelet
 {
 
 /*!
-  Nodelet that handles with the ping echo sounder
+  Nodelet that handles with the ping echosounder
 */
 class PingDepthNodelet : public nodelet::Nodelet
 {
 public:
-  PingDepthNodelet(){};
-  ~PingDepthNodelet(){}
+  PingDepthNodelet() {}
+  ~PingDepthNodelet() {}
 
   virtual void onInit()
   {
@@ -33,14 +37,12 @@ public:
     {
       NODELET_ERROR_STREAM("Could not initialize nodelet! Please restart. [" << name << "]");
     }
-
   }
 
 private:
   boost::shared_ptr<PingDepth> controller_;
-
 };
 
-}
+}  // namespace ping_nodelet
 
 PLUGINLIB_EXPORT_CLASS(ping_nodelet::PingDepthNodelet, nodelet::Nodelet);

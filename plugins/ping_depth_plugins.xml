@@ -1,7 +1,7 @@
 <library path="lib/libping_depth_nodelet">
   <class name="ping_nodelet/PingDepthNodelet" type="ping_nodelet::PingDepthNodelet" base_class_type="nodelet::Nodelet">
   <description>
-    Blue Robotics Ping echo sounder nodelet.
+    Blue Robotics Ping echosounder nodelet.
   </description>
   </class>
 </library>
