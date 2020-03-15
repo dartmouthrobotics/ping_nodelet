@@ -59,7 +59,10 @@ class PingDepth
       ros::Publisher pubPing = nh_.advertise<Ping>("/ping_nodelet/ping", 1000);
       Ping rosMessage;
 
-      /*! Initialize message to send as a request */
+      /*!
+        Initialize message to send as a request
+        MESSAGE: change message type here
+      */
       ping1d_distance_simple txMessage;
       txMessage.updateChecksum();
 
@@ -79,13 +82,15 @@ class PingDepth
           for (uint32_t i = 0; i < profile_msg_length; i++)
               parser.parseByte(buffer[i]);
 
-          /*!
-              Publish data
-              TO DO: set frame_id
-          */
+          /*! MESSAGE: change message type here */
           ping1d_distance_simple rxMessage(parser.rxMessage);
 
+          /*!
+            Publish data.
+            MESSAGE: if message type changes, then change ROS message format. 
+          */
           rosMessage.header.stamp = ros::Time::now();
+          rosMessage.header.frame_id = "ping1d";
           rosMessage.pinger_link = '0';
           rosMessage.distance = rxMessage.distance() / 1000.0;
           rosMessage.confidence = rxMessage.confidence();
