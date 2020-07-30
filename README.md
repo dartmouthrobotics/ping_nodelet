@@ -46,7 +46,7 @@ catkin_init_workspace
 ## Install
 Clone repository:
 ```
-git clone https://github.com/dartmouthrobotics/underwater_color_enhance.git
+git clone https://github.com/dartmouthrobotics/ping_nodelet.git
 ```
 
 ## Build
