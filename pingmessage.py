@@ -777,7 +777,7 @@ if __name__ == "__main__":
         m.message_id = PING1D_SET_RANGE
         m.request_id = None
         m.scan_start = 0
-        m.scan_length = 4000 # 5000 #4000
+        m.scan_length = 10000 # 5000 #4000
         m.pack_msg_data()
         sock.sendto(m.msg_data, ("192.168.2.2", 9090))
         time.sleep(0.01)
